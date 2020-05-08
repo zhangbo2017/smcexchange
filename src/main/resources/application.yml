@@ -1,0 +1,62 @@
+spring:
+  application:
+    name: SMC-Exchange
+
+  jpa: 
+    database: mysql
+    show-sql: true
+    hibernate: 
+      ddl-auto: update
+    properties:
+      hibernate: 
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+  profiles:  
+    active: prod
+
+server:
+  port: 8754
+
+---
+spring:
+  profiles: dev
+
+  #a数据库连接配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://rm-2zet9y260v0pmf83yqo.mysql.rds.aliyuncs.com:3306/stockmarket?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root2020
+    password: root2020!
+
+#eureka settings
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
+
+---
+spring:
+  profiles: prod
+
+  #a数据库连接配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://rm-2zet9y260v0pmf83yqo.mysql.rds.aliyuncs.com:3306/stockmarket?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root2020
+    password: root2020!
+
+#eureka settings     
+eureka:
+  client:
+    service-url:
+      defaultZone: http://101.201.102.101:8761/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
