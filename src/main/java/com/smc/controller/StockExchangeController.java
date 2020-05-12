@@ -7,6 +7,11 @@ import com.smc.utils.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * @author BoZhang
+ * E-mail:dlzbo@cn.ibm.com
+ * @version date：May 12, 2020 7:57:12 PM
+*/
 @CrossOrigin
 @RestController
 // @RequestMapping("/admin/manage/exchange")
