@@ -12,7 +12,7 @@ spring:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
   profiles:  
-    active: prod
+    active: dev
 
 server:
   port: 8754
@@ -32,7 +32,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
     healthcheck:
       enabled: true
   instance:
